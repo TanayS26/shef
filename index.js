@@ -3,7 +3,7 @@
     minute = second * 60,
     hour = minute * 60,
     day = hour * 24;
-    // for not to update daily 
+  // for not to update daily 
   let today = new Date(),
     dd = String(today.getDate()).padStart(2, "0"),
     mm = String(today.getMonth() + 1).padStart(2, "0"),
@@ -40,3 +40,38 @@
       //seconds
     }, 0);
 })();
+
+document.addEventListener('contextmenu', function (e) {
+  e.preventDefault();
+}, false);
+
+document.addEventListener('keydown', function (e) {
+  // F12 key
+  if (e.keyCode == 123) {
+    e.preventDefault();
+  }
+  // Ctrl+Shift+I
+  if (e.ctrlKey && e.shiftKey && e.keyCode == 73) {
+    e.preventDefault();
+  }
+  // Ctrl+Shift+J
+  if (e.ctrlKey && e.shiftKey && e.keyCode == 74) {
+    e.preventDefault();
+  }
+  // Ctrl+U
+  if (e.ctrlKey && e.keyCode == 85) {
+    e.preventDefault();
+  }
+}, false);
+
+
+var originalTitle = document.title;
+document.addEventListener('visibilitychange', function () {
+  if (document.hidden) {
+    document.title = 'Hey, come back!';
+  } else {
+    document.title = originalTitle;
+  }
+});
+
+

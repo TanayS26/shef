@@ -92,3 +92,8 @@ li{
         font-size: calc(3.375rem * var(--smaller));
     }
 }
+
+title {
+    font-size: 30px;
+    color: red;
+}
